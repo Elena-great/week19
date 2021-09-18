@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+class Validator {
+    constructor (email, domain, date, phone){
+        this.email = email;
+        this.domain = domain;
+        this.date = date;
+        this.phone = phone;
+    }
+    isEmail(email){
+        let re =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(re.test(email)){
+            return true;}
+            else{
+            alert ("Неверный эл. адрес! Нужный формат example@example.example");
+        }
+    }
+
+    isDomain(domain){
+        let re1  = /^(?!:\/\/)([a-zA-Z0-9]+\.)?[a-zA-Z0-9][a-zA-Z0-9-]+\.[a-zA-Z]{2,6}?$/i; 
+        if(re1.test(domain)){
+            return true;
+        }
+            else{
+            alert ("Неверный формат домена! Нужный формат example.example");
+        }
+    }
+
+    isDate(date){
+        let re2 = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+        if(re2.test(date)){
+            return true;
+        }
+        else{
+            alert ("Неверный формат даты! Нужный формат:дд.мм.гггг");
+        }
+    }
+
+    isPhone(phone){
+        let re3 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        if(re3.test(phone)){
+            return true;
+       }
+       else{
+           alert("Неверный формат телефона! Нужный формат +0(000)000-00-00");
+       }
+    }
+}
+let validator = new Validator();
+console.log(validator.isEmail('alisa@mail.ru'));
+console.log(validator.isDomain('itgirlschool.ru'));
+console.log(validator.isDate('12.05.2021'));
+console.log(validator.isPhone('+7(910)123-45-67'));
+
+class ValidatorStatic {
+    constructor (email, domain, date, phone){
+        this.email = email;
+        this.domain = domain;
+        this.date = date;
+        this.phone = phone;
+    }
+    static isEmail(email){
+        let re =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(re.test(email)){
+            return true;}
+            else{
+            alert ("Неверный эл. адрес! Нужный формат example@example.example");
+        }
+    }
+
+    static isDomain(domain){
+        let re1  = /^(?!:\/\/)([a-zA-Z0-9]+\.)?[a-zA-Z0-9][a-zA-Z0-9-]+\.[a-zA-Z]{2,6}?$/i; 
+        if(re1.test(domain)){
+            return true;
+        }
+            else{
+            alert ("Неверный формат домена! Нужный формат example.example");
+        }
+    }
+
+    static isDate(date){
+        let re2 = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+        if(re2.test(date)){
+            return true;
+        }
+        else{
+            alert ("Неверный формат даты! Нужный формат:дд.мм.гггг");
+        }
+    }
+
+    static isPhone(phone){
+        let re3 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        if(re3.test(phone)){
+            return true;
+       }
+       else{
+           alert("Неверный формат телефона! Нужный формат +0(000)000-00-00");
+       }
+    }
+}
+console.log(ValidatorStatic.isEmail('alisa@mail.ru'));
+console.log(ValidatorStatic.isDomain('itgirlschool.ru'));
+console.log(ValidatorStatic.isDate('12.05.2021'));
+console.log(ValidatorStatic.isPhone('+7(910)123-45-67'))
+
+  </script>  
+</body>
+</html>

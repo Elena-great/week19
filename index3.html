@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div style="margin: 10px;"> <input type="text" id="num1"/></div>
+ <div style="margin: 10px;"> <input type="text" id="num2"/></div>
+   <div style="margin: 10px;"> 
+    <button onclick="sum()">+</button>
+    <button onclick="min()">-</button>
+    <button onclick="mult()">*</button>
+    <button onclick="divis()">/</button></div>
+  <script>
+
+class Calc {
+    constructor (a, b){
+      this.a = a;
+      this.b = b;
+    }
+
+  static sum(a, b){
+  return +a + +b;
+  }
+  static min(a, b){
+  return a - b;
+  }
+  static mult(a, b){
+  return a * b;
+  }
+  static divis(a, b){
+  return a / b;
+  }
+}
+
+function numbers(){
+a = document.getElementById('num1').value;
+b = document.getElementById('num2').value;
+}
+
+function sum() {
+numbers();
+let sum = Calc.sum(a, b);
+alert (sum);
+}
+ 
+
+function min() {
+  numbers();
+  let min = Calc.min(a,b);
+  alert(min);
+}
+
+function mult() {
+  numbers();
+ let mult = Calc.mult(a,b);
+ alert(mult);
+}
+
+function divis() {
+numbers();
+let divis = Calc.divis(a,b);
+ alert(divis);
+}
+
+
+    </script>
+</body>
+</html>
