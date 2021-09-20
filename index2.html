@@ -72,7 +72,9 @@ function saveCat(){
             } else {
                 sex = document.getElementById('f').value;
             }
-        }
+    let catForm = new Cat (nameCat, nameOwner, phoneNum, sex);
+    console.log(catForm);
+    }
     class Cat{
         constructor (nameCat, nameOwner, phoneNum, sex){
             this.nameCat = nameCat;
@@ -81,9 +83,7 @@ function saveCat(){
             this.sex = sex;
         }
     }
-    let catForm = new Cat (nameCat, nameOwner, phoneNum, sex);
-    console.log(catForm);
-
+   
 </script>
 </body>
 </html>
